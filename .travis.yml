@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t ruchikarnawan/learn-docker-nuxt -f Dockerfile.dev .
+
+script:
+  - docker run ruchikarnawan/learn-docker-nuxt npm run lint
